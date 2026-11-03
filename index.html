@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdul Hameed | My E-Portfolio</title>
+
+<meta name="description" content="Academic e-portfolio of Abdul Hameed, English Language Teaching student at the University of Sindh, Jamshoro, Pakistan.">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+
+:root {
+    --navy: #10243a;
+    --navy-light: #183650;
+    --teal: #087f8c;
+    --teal-light: #e8f5f5;
+    --gold: #d5a64a;
+    --white: #ffffff;
+    --background: #f4f7fa;
+    --text: #344456;
+    --muted: #718096;
+    --border: #e5ebf0;
+    --shadow: 0 12px 35px rgba(16,36,58,0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.8;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+/* HEADER */
+
+header {
+    background: var(--navy);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+
+nav {
+    min-height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    order: 0;
+    color: white;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+/* HAMBURGER MENU */
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-button {
+    order: -1;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 5px 12px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 7px;
+    line-height: 1.2;
+}
+
+.nav-links {
+    position: fixed;
+    top: 75px;
+    left: -280px;
+    width: 260px;
+    height: calc(100vh - 75px);
+    background: var(--navy);
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    box-shadow: 5px 10px 20px rgba(0,0,0,0.2);
+}
+
+.menu-toggle:checked ~ .nav-links {
+    left: 0;
+}
+
+.nav-links a {
+    color: #e7eef5;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 15px;
+    border-radius: 7px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background: var(--navy-light);
+    color: var(--gold);
+}
+
+/* SHOW ONLY SELECTED SECTION */
+
+section {
+    display: none;
+    min-height: calc(100vh - 75px);
+    padding: 85px 0;
+    scroll-margin-top: 75px;
+}
+
+section:target {
+    display: block;
+}
+
+body:not(:has(section:target)) #home {
+    display: block;
+}
+
+/* FOOTER */
+
+footer {
+    display: none;
+    background: #0b1b2b;
+    color: #c5d0db;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 13px;
+}
+
+body:has(#contact:target) footer {
+    display: block;
+}
+
+footer strong {
+    color: var(--gold);
+}
+
+/* HOME */
+
+.hero {
+    background: linear-gradient(125deg, #10243a, #183f59);
+    color: white;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 50%;
+    right: -100px;
+    top: -120px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50%;
+    right: 50px;
+    bottom: -190px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 790px;
+}
+
+.hero-label {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 7vw, 70px);
+    line-height: 1.15;
+    margin-bottom: 12px;
+}
+
+.hero h2 {
+    font-size: 19px;
+    font-weight: 500;
+    color: #b9d5df;
+    margin-bottom: 27px;
+}
+
+.hero h3 {
+    color: var(--gold);
+    font-size: 20px;
+    margin-bottom: 13px;
+}
+
+.hero p {
+    color: #e1eaf0;
+    max-width: 750px;
+    margin-bottom: 15px;
+}
+
+.hero-motto {
+    margin-top: 28px;
+    color: var(--gold);
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+.home-photo {
+    margin-top: 35px;
+}
+
+.home-photo img {
+    width: 220px;
+    height: 350px;
+    object-fit: cover;
+    border: 5px solid white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* SECTION HEADINGS */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading span {
+    color: var(--teal);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-heading h2 {
+    color: var(--navy);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 39px);
+    margin-top: 7px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+/* CARDS */
+
+.card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(16,36,58,0.12);
+}
+
+.card h3 {
+    color: var(--navy);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    margin-bottom: 13px;
+}
+
+.card p:last-child {
+    margin-bottom: 0;
+}
+
+/* ABOUT */
+
+#about {
+    background: white;
+}
+
+.about-card {
+    max-width: 950px;
+    margin: auto;
+    border-left: 5px solid var(--teal);
+}
+
+.about-card p {
+    margin-bottom: 17px;
+}
+
+/* ACADEMIC EDUCATION */
+
+#education {
+    background: white;
+}
+
+.academic-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    max-width: 950px;
+    margin: auto;
+}
+
+.academic-card {
+    text-align: center;
+    border-top: 4px solid var(--teal);
+}
+
+.marksheet-photo {
+    width: 100%;
+    height: 420px;
+    object-fit: contain;
+    background: #f4f7fa;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 12px;
+}
+
+/* EXPERIENCE */
+
+.experience-intro {
+    max-width: 950px;
+    margin: 0 auto 30px;
+}
+
+.internship-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    background: var(--teal-light);
+    border-radius: 12px;
+    padding: 23px;
+    margin-bottom: 25px;
+}
+
+.detail-item {
+    font-size: 14px;
+    color: var(--navy);
+}
+
+.detail-item strong {
+    color: var(--teal);
+}
+
+.experience-intro > p {
+    margin-top: 15px;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.experience-card {
+    border-top: 4px solid var(--teal);
+}
+
+.experience-card ul,
+.skill-card ul,
+.outcomes-list {
+    padding-left: 22px;
+}
+
+.experience-card li,
+.skill-card li,
+.outcomes-list li {
+    margin-bottom: 7px;
+}
+
+.experience-card li::marker,
+.skill-card li::marker,
+.outcomes-list li::marker {
+    color: var(--teal);
+}
+
+.experience-photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.experience-photos img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 4px solid white;
+    box-shadow: 0 10px 25px rgba(16,36,58,0.12);
+    transition: 0.3s;
+}
+
+.experience-photos img:hover {
+    transform: translateY(-5px);
+}
+
+/* SKILLS */
+
+#skills {
+    background: white;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.skill-card {
+    border-top: 4px solid var(--teal);
+}
+
+.skill-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--teal-light);
+    color: var(--teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 22px;
+    margin-bottom: 17px;
+}
+
+/* LEARNING */
+
+.learning-card {
+    max-width: 950px;
+    margin: auto;
+}
+
+.learning-card > p {
+    margin-bottom: 18px;
+}
+
+.outcomes-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 25px;
+}
+
+.learning-ending {
+    margin-top: 20px;
+}
+
+/* REFLECTION */
+
+#reflection {
+    background: white;
+}
+
+.reflection-card {
+    max-width: 950px;
+    margin: auto;
+    border-left: 5px solid var(--gold);
+}
+
+/* CONCLUSION */
+
+.conclusion-card {
+    max-width: 950px;
+    margin: auto;
+    text-align: center;
+    background: var(--navy);
+    color: white;
+    border: none;
+    padding: 45px;
+}
+
+.conclusion-card h3 {
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+}
+
+.conclusion-card p {
+    color: #e0e9ef;
+    margin-top: 15px;
+}
+
+.thank-you {
+    color: var(--gold) !important;
+    font-size: 20px;
+    font-weight: 800;
+    margin-top: 25px !important;
+}
+
+/* CONTACT */
+
+#contact {
+    background: white;
+}
+
+.contact-card {
+    max-width: 700px;
+    margin: auto;
+}
+
+.contact-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px 5px;
+    border-bottom: 1px solid var(--border);
+}
+
+.contact-row:last-child {
+    border-bottom: none;
+}
+
+.contact-row strong {
+    color: var(--navy);
+}
+
+.contact-row span {
+    text-align: right;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    nav {
+        min-height: 70px;
+    }
+
+    .nav-links {
+        top: 70px;
+        height: calc(100vh - 70px);
+    }
+
+    .hero {
+        padding: 65px 0;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .experience-grid,
+    .academic-grid,
+    .skills-grid,
+    .internship-details,
+    .outcomes-list {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-photos {
+        grid-template-columns: 1fr;
+    }
+
+    .home-photo img {
+        width: 190px;
+        height: 220px;
+    }
+
+    .card {
+        padding: 23px;
+    }
+
+    .contact-row {
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .contact-row span {
+        text-align: left;
+    }
+
+    .conclusion-card {
+        padding: 30px 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+
+            <a href="#home" class="logo">ABDUL <span>HAMEED.</span></a>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-button">☰</label>
+
+            <div class="nav-links">
+                <a href="#home">HOME</a>
+                <a href="#about">ABOUT ME</a>
+                <a href="#education">ACADEMIC EDUCATION</a>
+                <a href="#experience">EXPERIENCE</a>
+                <a href="#skills">MY SKILLS</a>
+                <a href="#learning">LEARNING</a>
+                <a href="#reflection">REFLECTION</a>
+                <a href="#conclusion">CONCLUSION</a>
+                <a href="#contact">CONTACT</a>
+            </div>
+
+        </nav>
+    </div>
+</header>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+
+            <span class="hero-label">Academic E-Portfolio</span>
+
+            <h1>Abdul Hameed</h1>
+
+            <h2>BS English Language Teaching (ELT) Student | Future English Language Educator</h2>
+
+            <h3>Welcome to my E-Portfolio!</h3>
+
+            <p>
+                I am Abdul Hameed, a BS English Language Teaching (ELT) student at the University of Sindh, Jamshoro.
+            </p>
+
+            <p>
+                I am passionate about English language teaching, grammar instruction, vocabulary development, reading comprehension, and classroom communication.
+            </p>
+
+            <p>
+                This E-Portfolio highlights my academic journey, teaching internship, classroom activities, professional skills, and learning experiences.
+            </p>
+
+            <p>
+                My aim is to become an effective English language educator who helps students improve their language skills, build confidence, and develop a positive attitude towards learning.
+            </p>
+
+            <div class="hero-motto">Learn. Teach. Improve. Inspire.</div>
+
+            <div class="home-photo">
+                <img src="abdul-hameed.jpg.jpg" alt="Abdul Hameed">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT ME -->
+
+<section id="about">
+    <div class="container">
+
+        <div class="section-heading">
+            <span>Introduction</span>
+            <h2>About Me</h2>
+            <p>Getting to know my academic background and teaching journey.</p>
+        </div>
+
+        <div class="card about-card">
+            <p>
+                My name is Abdul Hameed, and I am studying BS English Language Teaching (ELT) at the University of Sindh, Jamshoro.
+            </p>
+
+            <p>
+                I have a strong interest in English language education and teaching methodologies. I believe that language learning involves more than memorizing grammar rules. It requires communication, understanding, practice, vocabulary development, and confidence.
+            </p>
+
+            <p>
+                During my academic journey, I have developed an understanding of English grammar, language skills, lesson planning, classroom interaction, and teaching strategies.
+            </p>
+
+            <p>
+                My teaching internship at GBPS Haji Khan Kaloi has provided me with an opportunity to apply my academic knowledge in a real classroom environment.
+            </p>
+
+            <p>
+                My long-term goal is to become a skilled and responsible English language teacher.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ACADEMIC EDUCATION -->
+
+<section id="education">
+    <div class="container">
+
+        <div class="section-heading">
+            <span>Educational Background</span>
+            <h2>Academic Education</h2>
+            <p>My academic records and educational achievements.</p>
+        </div>
+
+        <div class="academic-grid">
+
+            <div class="card academic-card">
+                <h3>Matriculation (10th Class)</h3>
+                <p>My 10th class marksheet.</p>
+                <img class="marksheet-photo" src="10thclassmarksheet.jpg" alt="10th Class Marksheet">
+            </div>
+
+            <div class="card academic-card">
+                <h3>Intermediate (12th Class)</h3>
+                <p>My 12th class marksheet.</p>
+                <img class="marksheet-photo" src="12thclassmarksheet.jpg" alt="12th Class Marksheet">
+            </div>
+
+            <!-- NEW PASS CERTIFICATE CARD -->
+
+            <div class="card academic-card">
+                <h3>Pass Certificate</h3>
+                <p>My Pass Certificate.</p>
+                <img class="marksheet-photo" src="passcertificate.jpg" alt="Pass Certificate">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+    <div class="container">
+
+        <div class="section-heading">
+            <span>Practical Experience</span>
+            <h2>Teaching Internship</h2>
+            <p>My classroom teaching experience and activities.</p>
+        </div>
+
+        <div class="card experience-intro">
+
+            <div class="internship-details">
+                <div class="detail-item"><strong>School:</strong> GBPS Haji Khan Kaloi</div>
+                <div class="detail-item"><strong>Teaching Class:</strong> Grade 5</div>
+                <div class="detail-item"><strong>Programme:</strong> BS English Language Teaching (ELT)</div>
+                <div class="detail-item"><strong>University:</strong> University of Sindh, Jamshoro</div>
+                <div class="detail-item"><strong>Role:</strong> English Language Teaching Intern</div>
+            </div>
+
+            <p>
+                My teaching internship was an important part of my academic and professional development. During this experience, I worked with Grade 5 students and participated in different English language teaching activities.
+            </p>
+
+            <p>
+                I focused on improving students' understanding of grammar, vocabulary, reading, translation, and sentence construction.
+            </p>
+
+        </div>
+
+        <div class="experience-grid">
+
+            <div class="card experience-card">
+                <h3>1. English Grammar Teaching</h3>
+
+                <p>
+                    I taught basic English grammar concepts to help students understand the structure and correct use of the English language.
+                </p>
+
+                <p><strong>Topics included:</strong></p>
+
+                <ul>
+                    <li>Parts of Speech</li>
+                    <li>Nouns and Pronouns</li>
+                    <li>Verbs and Adjectives</li>
+                    <li>Adverbs and Prepositions</li>
+                    <li>Articles (A, An, The)</li>
+                    <li>Tenses</li>
+                    <li>Sentence Structure</li>
+                    <li>Singular and Plural</li>
+                    <li>Use of Helping Verbs</li>
+                    <li>Basic Grammar Rules</li>
+                </ul>
+
+                <p>
+                    I used simple explanations and examples to make grammar lessons easier for students to understand.
+                </p>
+            </div>
+
+            <div class="card experience-card">
+                <h3>2. Lesson Reading and Translation</h3>
+
+                <p>
+                    I helped students read their English textbook lessons and understand their meanings.
+                </p>
+
+                <p><strong>My activities included:</strong></p>
+
+                <ul>
+                    <li>Reading English lessons aloud.</li>
+                    <li>Explaining difficult sentences.</li>
+                    <li>Translating English sentences into Urdu.</li>
+                    <li>Explaining the central idea of lessons.</li>
+                    <li>Helping students understand paragraphs.</li>
+                    <li>Asking questions about lesson content.</li>
+                    <li>Improving reading and comprehension skills.</li>
+                </ul>
+
+                <p>
+                    Translation helped students understand English lessons more effectively.
+                </p>
+            </div>
+
+            <div class="card experience-card">
+                <h3>3. Word Meanings and Vocabulary Development</h3>
+
+                <p>
+                    Vocabulary development was another important part of my teaching practice.
+                </p>
+
+                <p>
+                    I helped students learn new English words and understand their meanings.
+                </p>
+
+                <p><strong>My activities included:</strong></p>
+
+                <ul>
+                    <li>Explaining difficult English words.</li>
+                    <li>Providing Urdu meanings.</li>
+                    <li>Teaching synonyms and antonyms.</li>
+                    <li>Using new words in sentences.</li>
+                    <li>Practising spelling and pronunciation.</li>
+                    <li>Helping students remember new vocabulary.</li>
+                </ul>
+            </div>
+
+            <div class="card experience-card">
+                <h3>4. Reading and Writing Skills</h3>
+
+                <p>
+                    I encouraged students to improve their reading and writing abilities.
+                </p>
+
+                <p><strong>Activities included:</strong></p>
+
+                <ul>
+                    <li>Reading textbook paragraphs.</li>
+                    <li>Writing answers to questions.</li>
+                    <li>Practising sentence formation.</li>
+                    <li>Correcting basic grammatical mistakes.</li>
+                    <li>Improving handwriting and spelling.</li>
+                    <li>Completing textbook exercises.</li>
+                </ul>
+            </div>
+
+            <div class="card experience-card">
+                <h3>5. Classroom Teaching Methods</h3>
+
+                <p>
+                    During my internship, I practised different teaching methods:
+                </p>
+
+                <ul>
+                    <li>Explanation Method</li>
+                    <li>Question and Answer Method</li>
+                    <li>Reading Aloud Method</li>
+                    <li>Discussion Method</li>
+                    <li>Demonstration Method</li>
+                    <li>Individual Practice</li>
+                    <li>Written Exercises</li>
+                </ul>
+
+                <p>
+                    These methods helped me understand how to make classroom learning more effective and interactive.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="experience-photos">
+            <img src="hameedbaloch.jpg" alt="Teaching Internship Photo 1">
+            <img src="hameedkaloi.jpg" alt="Teaching Internship Photo 2">
+            <img src="hameedkhan.jpg" alt="Teaching Internship Photo 3">
+        </div>
+
+    </div>
+</section>
+
+<!-- MY SKILLS -->
+
+<section id="skills">
+    <div class="container">
+
+        <div class="section-heading">
+            <span>Professional Development</span>
+            <h2>My Skills</h2>
+            <p>Skills developed through my academic and practical experience.</p>
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="card skill-card">
+                <div class="skill-icon">📚</div>
+                <h3>Teaching Skills</h3>
+                <ul>
+                    <li>English Grammar Instruction</li>
+                    <li>Lesson Explanation</li>
+                    <li>Translation Skills</li>
+                    <li>Vocabulary Teaching</li>
+                    <li>Reading Comprehension</li>
+                    <li>Sentence Formation</li>
+                    <li>Lesson Preparation</li>
+                    <li>Classroom Interaction</li>
+                </ul>
+            </div>
+
+            <div class="card skill-card">
+                <div class="skill-icon">💬</div>
+                <h3>Communication Skills</h3>
+                <ul>
+                    <li>Verbal Communication</li>
+                    <li>Classroom Communication</li>
+                    <li>Active Listening</li>
+                    <li>Presentation Skills</li>
+                    <li>Giving Clear Instructions</li>
+                    <li>Student Interaction</li>
+                </ul>
+            </div>
+
+            <div class="card skill-card">
+                <div class="skill-icon">🎯</div>
+                <h3>Professional Skills</h3>
+                <ul>
+                    <li>Time Management</li>
+                    <li>Patience and Responsibility</li>
+                    <li>Teamwork</li>
+                    <li>Problem Solving</li>
+                    <li>Creativity</li>
+                    <li>Adaptability</li>
+                    <li>Continuous Learning</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- LEARNING OUTCOMES -->
+
+<section id="learning">
+    <div class="container">
+
+        <div class="section-heading">
+            <span>Academic Growth</span>
+            <h2>Learning Outcomes</h2>
+            <p>What I learned during my teaching internship.</p>
+        </div>
+
+        <div class="card learning-card">
+
+            <p>
+                My teaching internship helped me connect theoretical knowledge with practical classroom experience.
+            </p>
+
+            <p><strong>Through this experience, I learned:</strong></p>
+
+            <ul class="outcomes-list">
+                <li>How to explain English grammar in simple language.</li>
+                <li>How to teach new vocabulary and word meanings.</li>
+                <li>How to translate English lessons for better understanding.</li>
+                <li>How to encourage students to participate in classroom activities.</li>
+                <li>How to manage classroom learning activities.</li>
+                <li>How to identify students' learning difficulties.</li>
+                <li>How to improve communication and teaching skills.</li>
+                <li>How to prepare and explain lessons effectively.</li>
+            </ul>
+
+            <p class="learning-ending">
+                This experience increased my confidence and strengthened my interest in becoming an English language teacher.
+            </p>
+
+        </div>
+    </div>
+</section>
+
+<!-- CHALLENGES AND REFLECTION -->
+
+<section id="reflection">
+    <div class="container">
+
+        <div class="section-heading">
+            <span>Personal Development</span>
+            <h2>Challenges and Reflection</h2>
+            <p>Lessons learned from real classroom challenges.</p>
+        </div>
+
+        <div class="card reflection-card">
+
+            <p>
+                During my teaching internship, I experienced different classroom challenges.
+            </p>
+
+            <p>
+                Some students needed additional explanations to understand English grammar and vocabulary. Others required support with reading, pronunciation, and sentence formation.
+            </p>
+
+            <p>
+                To address these challenges, I used simple examples, repeated explanations, translation, and question-and-answer activities.
+            </p>
+
+            <p>
+                I learned that every student has a different learning ability. Therefore, teachers should be patient, supportive, and flexible.
+            </p>
+
+            <p>
+                This experience taught me the importance of preparation, classroom management, and student-centred learning.
+            </p>
+
+        </div>
+    </div>
+</section>
+
+<!-- CONCLUSION -->
+
+<section id="conclusion">
+    <div class="container">
+
+        <div class="section-heading">
+            <span>Final Thoughts</span>
+            <h2>Conclusion</h2>
+        </div>
+
+        <div class="card conclusion-card">
+
+            <h3>My Teaching Journey</h3>
+
+            <p>
+                My teaching internship at GBPS Haji Khan Kaloi was a valuable learning experience.
+            </p>
+
+            <p>
+                It provided me with an opportunity to practise English language teaching with Grade 5 students and develop my professional abilities.
+            </p>
+
+            <p>
+                I gained practical experience in grammar teaching, lesson translation, vocabulary development, reading, writing, and classroom communication.
+            </p>
+
+            <p>
+                I believe this experience will help me become a more confident, responsible, and effective English language educator.
+            </p>
+
+            <p class="thank-you">Thank You for Visiting My E-Portfolio!</p>
+
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+    <div class="container">
+
+        <div class="section-heading">
+            <span>Get in Touch</span>
+            <h2>Contact Information</h2>
+            <p>My academic and internship details.</p>
+        </div>
+
+        <div class="card contact-card">
+
+            <div class="contact-row">
+                <strong>Name:</strong>
+                <span>Abdul Hameed</span>
+            </div>
+
+            <div class="contact-row">
+                <strong>Programme:</strong>
+                <span>BS English Language Teaching (ELT)</span>
+            </div>
+
+            <div class="contact-row">
+                <strong>University:</strong>
+                <span>University of Sindh, Jamshoro</span>
+            </div>
+
+            <div class="contact-row">
+                <strong>Internship School:</strong>
+                <span>GBPS Haji Khan Kaloi</span>
+            </div>
+
+            <div class="contact-row">
+                <strong>Teaching Class:</strong>
+                <span>Grade 5</span>
+            </div>
+
+            <div class="contact-row">
+                <strong>Phone:</strong>
+                <span>03701232108</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    <p>© 2026 <strong>Abdul Hameed</strong> | Academic E-Portfolio</p>
+    <p>BS English Language Teaching | University of Sindh, Jamshoro</p>
+</footer>
+
+</body>
+</html>
